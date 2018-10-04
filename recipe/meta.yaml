@@ -14,7 +14,7 @@ source:
     - missing_stdint_zeromq.patch  # [win and vc<14]
 
 build:
-  number: 2
+  number: 1002
   skip: true  # [win and vc<14]
 
 requirements:
