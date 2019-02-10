@@ -1,6 +1,6 @@
 {% set name = "czmq" %}
-{% set version = "4.1.1" %}
-{% set sha256 = "b7623433547aa4b6e79722796c27ebc7c0470fea4204e920fd05e717c648f889" %}
+{% set version = "4.2.0" %}
+{% set sha256 = "31185090b500b64855003be2450ced00efa6b58544639acfc68aa13c9ec249f8" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
     - missing_stdint_zeromq.patch  # [win and vc<14]
 
 build:
-  number: 1003
+  number: 0
   skip: true  # [win and vc<14]
 
 requirements:
