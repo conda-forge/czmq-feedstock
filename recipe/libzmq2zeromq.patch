@@ -1,7 +1,7 @@
---- /root/czmq-4.1.1/CMakeLists.txt	2018-07-17 09:49:27.000000000 -0500
-+++ /root/czmq-4.1.1/CMakeLists_new.txt	2018-07-18 15:46:01.000000000 -0500
-@@ -114,16 +114,20 @@
- set(OPTIONAL_LIBRARIES)
+--- /root/czmq-4.2.0/CMakeLists.txt	2019-02-15 11:01:55.000000000 -0600
++++ /root/czmq-4.2.0/CMakeLists_new.txt	2019-02-15 11:35:50.000000000 -0600
+@@ -118,21 +118,25 @@
+ set(OPTIONAL_LIBRARIES_STATIC)
  
  ########################################################################
 -# LIBZMQ dependency
@@ -16,10 +16,15 @@
 +    message (STATUS "ZeroMQ_INCLUDE_DIR   : ${ZeroMQ_INCLUDE_DIR}") 
 +    message (STATUS "ZeroMQ_LIBRARY       : ${ZeroMQ_LIBRARY}")
 +    message (STATUS "ZeroMQ_STATIC_LIBRARY: ${ZeroMQ_STATIC_LIBRARY}")
-+    include_directories(${ZeroMQ_INCLUDE_DIRS})
++    include_directories(${ZeroMQ_INCLUDE_DIR})
 +    set(LIBZMQ_LIBRARIES libzmq)
 +    list(APPEND MORE_LIBRARIES libzmq)
-     set(pkg_config_libs_private "${pkg_config_libs_private} -lzmq")
+   IF (PC_LIBZMQ_FOUND)
+       set(pkg_config_names_private "${pkg_config_names_private} libzmq")
+       list(APPEND OPTIONAL_LIBRARIES_STATIC ${PC_LIBZMQ_STATIC_LDFLAGS})
+   ELSE (PC_LIBZMQ_FOUND)
+       set(pkg_config_libs_private "${pkg_config_libs_private} -lzmq")
+   ENDIF (PC_LIBZMQ_FOUND)
 -ELSE (LIBZMQ_FOUND)
 +ELSE (ZeroMQ_FOUND)
      message( FATAL_ERROR "libzmq not found." )
