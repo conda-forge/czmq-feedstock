@@ -1,3 +1,5 @@
+CMAKE_GENERATOR:
+- NMake Makefiles
 c_compiler:
 - vs2015
 channel_sources:
@@ -14,7 +16,7 @@ pin_run_as_build:
 vc:
 - '14'
 zeromq:
-- 4.2.5
+- 4.3.1
 zip_keys:
 - - vc
   - c_compiler
