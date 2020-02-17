@@ -1,13 +1,13 @@
 {% set name = "czmq" %}
-{% set version = "4.2.0" %}
-{% set sha256 = "31185090b500b64855003be2450ced00efa6b58544639acfc68aa13c9ec249f8" %}
+{% set version = "4.3.0-test" %}
+{% set sha256 = "8e658939992965ecf77a140d3caf4707f3c8d4a949f3f4ee9fb74a9cd8459bee" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/zeromq/{{ name }}/archive/v{{ version }}.tar.gz
+  url: https://github.com/zeromq/{{ name }}/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
     - libzmq2zeromq.patch
