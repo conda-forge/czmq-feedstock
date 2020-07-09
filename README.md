@@ -5,7 +5,7 @@ Home: http://czmq.zeromq.org/
 
 Package license: MPL-2.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: High-level C binding for 0MQ
 
