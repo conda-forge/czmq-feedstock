@@ -14,8 +14,7 @@ source:
     - missing_stdint_zeromq.patch  # [win and vc<14]
 
 build:
-  number: 1
-  skip: true  # [win and vc<14]
+  number: 2
 
 requirements:
   build:
@@ -36,7 +35,7 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/lib/libczmq.a  # [unix]
+    - test ! -f $PREFIX/lib/libczmq.a  # [unix]
     - test -f $PREFIX/lib/libczmq$SHLIB_EXT  # [unix]
     - test -f $PREFIX/include/czmq.h  # [unix]
     - if not exist %LIBRARY_LIB%\\libczmq.lib exit 1  # [win]
