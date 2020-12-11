@@ -11,12 +11,12 @@ if [[ `uname` == Darwin ]]; then
     export LDFLAGS="-Wl,-rpath,$PREFIX/lib $LDFLAGS"
     # Using autoconf
     ./autogen.sh
-    ./configure --prefix="$PREFIX"
+    ./configure --prefix="$PREFIX" --disable-static
 else
     # Using cmake
     mkdir build
     cd build
-    cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=$PREFIX ..
+    cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=$PREFIX -DCZMQ_BUILD_STATIC=OFF ..
 fi
 
 # Make all, run tests, then install
