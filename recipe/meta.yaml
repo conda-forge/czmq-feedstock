@@ -15,7 +15,7 @@ source:
     - 0003-bug-on-macos.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win and vc<14]
 
 requirements:
