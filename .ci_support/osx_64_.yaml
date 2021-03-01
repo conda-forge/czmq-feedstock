@@ -16,6 +16,8 @@ libuuid:
 - 2.32.1
 macos_machine:
 - x86_64-apple-darwin13.4.0
+pcre:
+- '8'
 pin_run_as_build:
   libuuid:
     max_pin: x
