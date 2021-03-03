@@ -18,4 +18,4 @@ target_platform:
 vc:
 - '14'
 zeromq:
-- 4.3.3
+- 4.3.4
