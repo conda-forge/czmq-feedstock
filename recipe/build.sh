@@ -17,7 +17,7 @@ if [[ `uname` == Darwin ]]; then
     ./configure --prefix="$PREFIX"
     make all VERBOSE=1
 
-    if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
+    if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" != "1" ]]; then
 	make check-verbose
     fi
 else
