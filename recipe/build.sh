@@ -8,12 +8,18 @@ set -euo pipefail
 # Copy zmq library without version if not already existing
 
 if [[ `uname` == Darwin ]]; then
+    # Get an updated config.sub and config.guess
+    cp $BUILD_PREFIX/share/gnuconfig/config.* .
+
     export LDFLAGS="-Wl,-rpath,$PREFIX/lib $LDFLAGS"
     # Using autoconf
     ./autogen.sh
     ./configure --prefix="$PREFIX"
     make all VERBOSE=1
-    make check-verbose
+
+    if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" != "1" ]]; then
+	make check-verbose
+    fi
 else
     # Using cmake
     mkdir build

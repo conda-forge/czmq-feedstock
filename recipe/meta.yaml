@@ -15,7 +15,7 @@ source:
     - 0003-bug-on-macos.patch
 
 build:
-  number: 3
+  number: 4
   skip: true  # [win and vc<14]
 
 requirements:
@@ -26,6 +26,7 @@ requirements:
     - automake  # [unix]
     - libtool  # [unix]
     - pkg-config  # [unix]
+    - gnuconfig   # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
