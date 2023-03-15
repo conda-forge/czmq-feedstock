@@ -21,6 +21,7 @@ build:
 requirements:
   build:
     - cmake
+    - make  # [unix]
     - ninja  # [win]
     - autoconf  # [unix]
     - automake  # [unix]
