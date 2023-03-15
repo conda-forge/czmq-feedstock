@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '11'
+- '14'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -11,18 +11,13 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '11'
+- '14'
 libuuid:
 - '2'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 pcre:
 - '8'
-pin_run_as_build:
-  libuuid:
-    max_pin: x
-  zeromq:
-    max_pin: x.x
 target_platform:
 - osx-64
 zeromq:

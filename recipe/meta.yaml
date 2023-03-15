@@ -15,12 +15,13 @@ source:
     - 0003-bug-on-macos.patch
 
 build:
-  number: 4
+  number: 5
   skip: true  # [win and vc<14]
 
 requirements:
   build:
     - cmake
+    - make  # [unix]
     - ninja  # [win]
     - autoconf  # [unix]
     - automake  # [unix]
