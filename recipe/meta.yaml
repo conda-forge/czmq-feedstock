@@ -15,8 +15,10 @@ source:
     - 0003-bug-on-macos.patch
 
 build:
-  number: 5
+  number: 6
   skip: true  # [win and vc<14]
+  run_exports: 
+    - {{ pin_subpackage('czmq', max_pin='x') }}
 
 requirements:
   build:
